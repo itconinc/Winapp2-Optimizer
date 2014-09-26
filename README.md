@@ -14,6 +14,8 @@ N.B.: By default, Windows does not allow PowerShell script running. Here is what
 3. Validate the authorization process by entering "Y" for Yes,
 4. It's done, you can now run PowerShell scripts on your system.
 
+As a bonus, we included [CCleaner.reg](CCleaner.reg) in this project. It contains *Exclude* registry keys that prevent any unwanted cleaning (at least in our opinion) and one *Include* registry key that cleans Windows Update cache.
+
 Enjoy!
 
 Julien Lacroix & Yann Prime
