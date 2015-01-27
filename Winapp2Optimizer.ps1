@@ -78,7 +78,7 @@ ForEach ($item In $file) {
             $regKey = $item | Select-String -Pattern "RegKey.*=([^\r\n]*)" -AllMatches | Select -Expand Matches | ForEach {$_.groups[1].value}
             if ($regKey -ne $null) {
                 ForEach ($var In $regKey) {
-                    $tmp = $var.Insert(4, ":")
+                    $tmp = "Registry::" + $var
                     if ($tmp.Contains("|")) {
                         $tmp = $tmp.Split("|")[0]
                     }
@@ -92,9 +92,6 @@ ForEach ($item In $file) {
                         $excludable += $var.Split("|")[0]
                         $regKeys    += "RegKey" + $b + "=" + $var
                         $b++
-                    }
-                    else {
-
                     }
                 }
             }
